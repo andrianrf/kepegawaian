@@ -23,7 +23,7 @@
             <td><?php echo $row->nama; ?></td>
             <td><?php echo $row->hp; ?></td>
             <td><?php echo $row->email; ?></td>
-            <td>Edit | Hapus</td>
+            <td><a href="<?php echo base_url('admin/ubah/'.$row->id); ?>">ubah</a> | <a href="<?php echo base_url('admin/hapus/'.$row->id); ?>">hapus</a></td>
         </tr>
         <?php
     }
