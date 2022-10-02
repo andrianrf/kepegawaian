@@ -11,13 +11,22 @@
         <th>email</th>
         <th>aksi</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>1234</td>
-        <td>Andrian Ramadhan Febriana</td>
-        <td>089653599531</td>
-        <td>andrian.r.febriana@gmail.com</td>
-        <td>Edit | Hapus</td>
-    </tr>
+
+    <?php
+    $no = 1;
+    foreach($this->M_pegawai->get_data_pegawai()->result() as $row){
+        ?>
+        <tr>
+            <td><?php echo $no++; ?></td>
+            <td><?php echo $row->id; ?></td>
+            <td><?php echo $row->nip; ?></td>
+            <td><?php echo $row->nama; ?></td>
+            <td><?php echo $row->hp; ?></td>
+            <td><?php echo $row->email; ?></td>
+            <td>Edit | Hapus</td>
+        </tr>
+        <?php
+    }
+    ?>
+
 </table>
