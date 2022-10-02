@@ -25,6 +25,7 @@ class Admin extends CI_Controller {
 
 	public function action_simpan()
 	{
+		$this->M_pegawai->simpan_data_pegawai($_POST);
 		echo "<script>alert('data berhasil disimpan');window.location='".base_url('admin/data')."'</script>";
 	}
 }

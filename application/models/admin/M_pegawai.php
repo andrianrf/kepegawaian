@@ -6,4 +6,8 @@ class M_pegawai extends CI_Model {
         return $this->db->query("select id, nip, nama, hp, email from pegawai");
 	}
 
+    function simpan_data_pegawai($data){
+        return $this->db->query("insert into pegawai (nip, nama, hp, email) values('".$data['nip']."', '".$data['nama']."', '".$data['hp']."', '".$data['email']."')");
+    }
+
 }
