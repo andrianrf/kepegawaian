@@ -31,7 +31,6 @@ class Admin extends CI_Controller {
 	
 	public function ubah($id)
 	{
-		$this->M_pegawai->get_data_pegawai_by_id($id);
 		foreach($this->M_pegawai->get_data_pegawai_by_id($id)->result() as $row){
 		$data = array(
 			'id' => $id,
@@ -54,5 +53,10 @@ class Admin extends CI_Controller {
 	{
 		$this->M_pegawai->hapus_data_pegawai($id);
 		echo "<script>alert('data berhasil dihapus');window.location='".base_url('admin/data')."'</script>";
+	}
+
+	public function helo()
+	{
+		$this->load->view('admin/helo');
 	}
 }
