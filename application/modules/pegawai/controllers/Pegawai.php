@@ -11,8 +11,8 @@ class Pegawai extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'title' => 'Home Pegawai',
-			'content' => 'home'
+			'title' => 'Data Pegawai',
+			'content' => 'data'
 			);
 
 		$this->load->view('template/admin/index', $data);

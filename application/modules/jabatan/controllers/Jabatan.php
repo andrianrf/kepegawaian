@@ -10,7 +10,12 @@ class Jabatan extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('jabatan/home');
+		$data = array(
+			'title' => 'Data Jabatan',
+			'content' => 'data'
+			);
+
+		$this->load->view('template/admin/index', $data);
 	}
 
 	public function data()
