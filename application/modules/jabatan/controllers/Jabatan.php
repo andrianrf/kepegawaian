@@ -12,7 +12,7 @@ class Jabatan extends CI_Controller {
 	{
 		$data = array(
 			'title' => 'Data Jabatan',
-			'content' => 'data'
+			'content' => 'jabatan/data'
 			);
 
 		$this->load->view('template/admin/index', $data);
@@ -20,12 +20,22 @@ class Jabatan extends CI_Controller {
 
 	public function data()
 	{
-		$this->load->view('jabatan/data');
+		$data = array(
+			'title' => 'Data Jabatan',
+			'content' => 'jabatan/data'
+			);
+
+		$this->load->view('template/admin/index', $data);
 	}
 
 	public function tambah()
 	{
-		$this->load->view('jabatan/tambah');
+		$data = array(
+			'title' => 'Tambah Jabatan',
+			'content' => 'jabatan/data'
+			);
+
+		$this->load->view('template/admin/index', $data);
 	}
 
 	public function action_simpan()
@@ -38,11 +48,13 @@ class Jabatan extends CI_Controller {
 	{
 		foreach($this->M_jabatan->get_data_jabatan_by_id($id)->result() as $row){
 		$data = array(
+			'title' => 'Ubah Jabatan',
+			'content' => 'jabatan/ubah',
 			'id' => $id,
 			'jabatan' => $row->jabatan,
 			);
 		}
-		$this->load->view('jabatan/ubah', $data);
+		$this->load->view('template/admin/index', $data);
 	}
 
 	public function action_ubah($id)
