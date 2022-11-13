@@ -1,3 +1,13 @@
+<?php
+if(!$this->session->userdata('id')){
+  ?>
+  <script>
+    window.location='<?php echo base_url('login'); ?>';
+  </script>
+  <?php
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
