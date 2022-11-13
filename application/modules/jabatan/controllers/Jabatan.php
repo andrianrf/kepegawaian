@@ -32,7 +32,7 @@ class Jabatan extends CI_Controller {
 	{
 		$data = array(
 			'title' => 'Tambah Jabatan',
-			'content' => 'jabatan/data'
+			'content' => 'jabatan/tambah'
 			);
 
 		$this->load->view('template/admin/index', $data);
