@@ -1,7 +1,7 @@
-<?php $this->load->view("admin/menu"); ?>
+<?php $this->load->view("pegawai/menu"); ?>
 
 Ubah Data Pegawai<br>
-<form method="post" action="<?php echo base_url('admin/action_ubah/'.$id); ?>">
+<form method="post" action="<?php echo base_url('pegawai/action_ubah/'.$id); ?>">
     nip : <input type="text" name="nip" value="<?php echo $nip; ?>"><br>
     nama : <input type="text" name="nama" value="<?php echo $nama; ?>"><br>
     hp : <input type="text" name="hp" value="<?php echo $hp; ?>"><br>

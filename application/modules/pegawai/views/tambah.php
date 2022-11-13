@@ -1,6 +1,6 @@
-<?php $this->load->view("admin/menu"); ?>
+<?php $this->load->view("pegawai/menu"); ?>
 
-<form method="post" action="<?php echo base_url('admin/action_simpan') ?>">
+<form method="post" action="<?php echo base_url('pegawai/action_simpan') ?>">
     nip : <input type="text" name="nip"><br>
     nama : <input type="text" name="nama"><br>
     hp : <input type="text" name="hp"><br>

@@ -1,32 +1,32 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+class Pegawai extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model('admin/M_pegawai');
+		$this->load->model('pegawai/M_pegawai');
 	}
 
 	public function index()
 	{
-		$this->load->view('admin/home');
+		$this->load->view('pegawai/home');
 	}
 
 	public function data()
 	{
-		$this->load->view('admin/data');
+		$this->load->view('pegawai/data');
 	}
 
 	public function tambah()
 	{
-		$this->load->view('admin/tambah');
+		$this->load->view('pegawai/tambah');
 	}
 
 	public function action_simpan()
 	{
 		$this->M_pegawai->simpan_data_pegawai($_POST);
-		echo "<script>alert('data berhasil disimpan');window.location='".base_url('admin/data')."'</script>";
+		echo "<script>alert('data berhasil disimpan');window.location='".base_url('pegawai/data')."'</script>";
 	}
 	
 	public function ubah($id)
@@ -40,23 +40,23 @@ class Admin extends CI_Controller {
 			'email' => $row->email,
 			);
 		}
-		$this->load->view('admin/ubah', $data);
+		$this->load->view('pegawai/ubah', $data);
 	}
 
 	public function action_ubah($id)
 	{
 		$this->M_pegawai->ubah_data_pegawai($id, $_POST);
-		echo "<script>alert('data berhasil diubah');window.location='".base_url('admin/data')."'</script>";
+		echo "<script>alert('data berhasil diubah');window.location='".base_url('pegawai/data')."'</script>";
 	}
 
 	public function hapus($id)
 	{
 		$this->M_pegawai->hapus_data_pegawai($id);
-		echo "<script>alert('data berhasil dihapus');window.location='".base_url('admin/data')."'</script>";
+		echo "<script>alert('data berhasil dihapus');window.location='".base_url('pegawai/data')."'</script>";
 	}
 
 	public function helo()
 	{
-		$this->load->view('admin/helo');
+		$this->load->view('pegawai/helo');
 	}
 }

@@ -1,6 +1,6 @@
-<?php $this->load->view("admin/menu"); ?>
+<?php $this->load->view("pegawai/menu"); ?>
 
-<a href="<?php echo base_url('admin/tambah'); ?>">tambah data</a>
+<a href="<?php echo base_url('pegawai/tambah'); ?>">tambah data</a>
 <table border="1" style="border-collapse: collapse;" width="100%">
     <tr>
         <th>no</th>
@@ -23,7 +23,7 @@
             <td><?php echo $row->nama; ?></td>
             <td><?php echo $row->hp; ?></td>
             <td><?php echo $row->email; ?></td>
-            <td><a href="<?php echo base_url('admin/ubah/'.$row->id); ?>">ubah</a> | <a href="<?php echo base_url('admin/hapus/'.$row->id); ?>">hapus</a></td>
+            <td><a href="<?php echo base_url('pegawai/ubah/'.$row->id); ?>">ubah</a> | <a href="<?php echo base_url('pegawai/hapus/'.$row->id); ?>">hapus</a></td>
         </tr>
         <?php
     }
