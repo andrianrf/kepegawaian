@@ -12,7 +12,7 @@ class Pegawai extends CI_Controller {
 	{
 		$data = array(
 			'title' => 'Data Pegawai',
-			'content' => 'data'
+			'content' => 'pegawai/data'
 			);
 
 		$this->load->view('template/admin/index', $data);
@@ -20,12 +20,23 @@ class Pegawai extends CI_Controller {
 
 	public function data()
 	{
-		$this->load->view('pegawai/data');
+		$data = array(
+			'title' => 'Data Pegawai',
+			'content' => 'pegawai/data'
+			);
+
+		$this->load->view('template/admin/index', $data);
 	}
+
 
 	public function tambah()
 	{
-		$this->load->view('pegawai/tambah');
+		$data = array(
+			'title' => 'Tambah Pegawai',
+			'content' => 'pegawai/tambah'
+			);
+
+		$this->load->view('template/admin/index', $data);
 	}
 
 	public function action_simpan()
@@ -38,6 +49,8 @@ class Pegawai extends CI_Controller {
 	{
 		foreach($this->M_pegawai->get_data_pegawai_by_id($id)->result() as $row){
 		$data = array(
+			'title' => 'Ubah Pegawai',
+			'content' => 'pegawai/ubah',
 			'id' => $id,
 			'nip' => $row->nip,
 			'nama' => $row->nama,
@@ -45,7 +58,7 @@ class Pegawai extends CI_Controller {
 			'email' => $row->email,
 			);
 		}
-		$this->load->view('pegawai/ubah', $data);
+		$this->load->view('template/admin/index', $data);
 	}
 
 	public function action_ubah($id)
@@ -62,6 +75,11 @@ class Pegawai extends CI_Controller {
 
 	public function helo()
 	{
-		$this->load->view('pegawai/helo');
+		$data = array(
+			'title' => 'Helo Pegawai',
+			'content' => 'pegawai/helo'
+			);
+
+		$this->load->view('template/admin/index', $data);
 	}
 }
